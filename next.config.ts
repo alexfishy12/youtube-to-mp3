@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/convert',
-        destination: 'http://localhost:4000/convert',
+        destination: process.env.NEXT_PUBLIC_API_BASE_URL + ':' + process.env.MEDIA_SERVER_PORT + '/convert',
       },
     ];
   },

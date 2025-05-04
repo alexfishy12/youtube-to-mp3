@@ -4,6 +4,8 @@ import { exec } from 'yt-dlp-exec'; // uses your custom typed declaration
 import { ExecaChildProcess } from 'execa';
 import sanitize from 'sanitize-filename'; // optional to clean up title strings
 import { writeFile } from 'fs/promises';
+import dotenv from 'dotenv';
+dotenv.config({path: '.env.local'});
 
 const app = express();
 app.use(cors());
@@ -63,30 +65,7 @@ app.get('/convert', async (req, res) => {
   }
 });
 
-// app.get('/metadata', async (req, res) => {
-//   const url = req.query.url as string;
-
-//   if (!url || !/^https?:\/\/(www\.)?youtube\.com\/watch\?v=/.test(url)) {
-//     res.status(400).send('Invalid YouTube URL');
-//     return;
-//   }
-
-//   try {
-//     const metadata = await ytdlp(url, {
-//       dumpJson: true,
-//     });
-
-//     const { title, uploader } = metadata as { title: string; uploader: string };
-
-//     res.json({ title, uploader });
-//   } catch (err) {
-//     console.error('[yt-dlp metadata error]', err);
-//     res.status(500).send('Failed to retrieve metadata');
-//   }
-// });
-
-
-const PORT = 4000;
+const PORT = process.env.MEDIA_SERVER_PORT;
 app.listen(PORT, () => {
   console.log(`✅ Media server running on http://localhost:${PORT}`);
 });

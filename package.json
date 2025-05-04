@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "tsx scripts/start-prod.ts",
     "lint": "next lint",
     "start-media-server": "tsx scripts/media-server.ts"
   },
@@ -13,6 +13,7 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "clsx": "^2.1.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.3",
