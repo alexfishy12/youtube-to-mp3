@@ -3,7 +3,6 @@ import cors from 'cors';
 import { exec } from 'yt-dlp-exec'; // uses your custom typed declaration
 import { ExecaChildProcess } from 'execa';
 import sanitize from 'sanitize-filename'; // optional to clean up title strings
-import { writeFile } from 'fs/promises';
 import dotenv from 'dotenv';
 dotenv.config({path: '.env.local'});
 
@@ -25,8 +24,6 @@ app.get('/convert', async (req, res) => {
     });
 
     const metadata = JSON.parse(metadataJson.stdout);
-    await writeFile('video-metadata.json', JSON.stringify(metadata, null, 2), 'utf-8');
-    console.log('Metadata saved to video-metadata.json');
     const title = sanitize(metadata.title || 'audio');
     const uploader = sanitize(metadata.uploader || 'unknown');
     console.log("Video Title: " + title);
