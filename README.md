@@ -42,3 +42,7 @@ npm start
 
 The application uses `PORT` from the ".env.local" file to host your app on that port. For example, if `PORT=50000`, then once the app is running, you'd navigate to 
 [http://localhost:50000](http://localhost:50000) with your browser to see the result.
+
+The app will only run if the terminal you ran the command "npm start" is running. If you close it out, the app will shut down.
+
+Once the installation is done, you can start the app in the future by navigating into the project directory, and in the terminal, run command `npm start`.
