@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a YouTube to MP3 converter built using Next.js and Node.
+
+## Pre-requisites
+To install the application, the following programs are required:
+- Node.js (it can be installed [here](https://nodejs.org/en))
 
 ## Getting Started
 
-First, run the development server:
+First, go to a directory on your machine where you prefer to install the application. Once in the directory, in the terminal, execute the following to download the source code: 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```bash 
+git clone https://github.com/alexfishy12/youtube-to-mp3.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+As an alternative, you could also click on the '<> Code' button on Github, then 'Download ZIP' and extract into your preferred folder.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open the folder with the extracted source code, and create a new file in it called ".env.local" with the following contents:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```plaintext
+NEXT_PUBLIC_API_BASE_URL=http://localhost
+MEDIA_SERVER_PORT=10101 # you can change this to anything
+PORT=10100 # you can change this as well
+```
 
-## Learn More
+After this is done, navigate to the folder in a terminal/command line interface by doing:
+```bash
+cd "YOUR/FILE/PATH/youtube-to-mp3"
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then, do:
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then,
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Then,
+```bash
+npm start
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application uses `PORT` from the ".env.local" file to host your app on that port. For example, if `PORT=10100`, then once the app is running, you'd navigate to 
+[http://localhost:10100](http://localhost:10100) with your browser to see the result.
