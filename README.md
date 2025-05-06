@@ -20,7 +20,8 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost
 MEDIA_SERVER_PORT=50001 # can be changed
 PORT=50000 # can be changed
 ```
-*The port numbers can be changed to any unused port number between 49152 to 65535 (inclusive). Just make sure the two assigned ports are not the same.*
+*The port numbers can be changed to any unused port number between 49152 to 65535 (inclusive). Just make sure the two assigned ports are not the same. Also, make sure the file is not a txt file, make sure it is a .local file.*
+
 
 After this is done, navigate to the folder in a terminal/command line interface by doing:
 ```bash
