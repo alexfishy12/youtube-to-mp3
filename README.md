@@ -26,6 +26,7 @@ After this is done, navigate to the folder in a terminal/command line interface 
 ```bash
 cd "YOUR/FILE/PATH/youtube-to-mp3"
 ```
+**Note: You could also navigate to the folder in your file explorer, then while in the folder, right click and click 'Open in Terminal'.**
 
 Then, do:
 ```bash
